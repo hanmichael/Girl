@@ -6,6 +6,7 @@ import java.util.List;
 
 import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;
+import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
 import z3jjlzt.s.girl.z3jjlzt.s.girl.entity.GirlEntity;
 import z3jjlzt.s.girl.z3jjlzt.s.girl.entity.GirlJsonData;
@@ -21,11 +22,13 @@ public class NetUtils {
         Retrofit retrofit = new Retrofit.Builder().baseUrl("http://gank.io/api/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .client(okHttpClient)
+                .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
                 .build();
         IgankApi igankApi = retrofit.create(IgankApi.class);
         try {
             //请求返回json数据
-            GirlJsonData girlJsonData=  igankApi.getGirl(num,page).execute().body();
+            final GirlJsonData girlJsonData=  igankApi.getGirl(num,page).execute().body();
+       ;
             //提取img url
             ArrayList<GirlEntity> girlEntityArrayList = (ArrayList<GirlEntity>) girlJsonData.getResults();
             for(GirlEntity girlEntity:girlEntityArrayList) {

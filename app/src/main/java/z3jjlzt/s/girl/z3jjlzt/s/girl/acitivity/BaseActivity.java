@@ -2,6 +2,7 @@ package z3jjlzt.s.girl.z3jjlzt.s.girl.acitivity;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.util.Log;
 
 /**
  * Created by s on 2016/3/9.
@@ -20,4 +21,7 @@ public abstract class BaseActivity extends Activity {
     protected abstract void initView(Bundle savedInstanceState);
 
     protected abstract void initVariables();
+    public void loge(String s){
+        Log.e("sb",s);
+    }
 }
