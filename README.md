@@ -9,4 +9,4 @@
 - rxjava 方便  observeOn()可多次调用， subscribeOn() 只能调用一次。
 - rxjava 与retrofit结合，添加addCallAdapterFactory(RxJavaCallAdapterFactory.create())方法
 
-[URL](http://img5.imgtn.bdimg.com/it/u=3046681623,2757206700&fm=23&gp=0.jpg)
+[我的主页](https://github.com/z3jjlzt)
