@@ -9,4 +9,7 @@
 - rxjava 方便  observeOn()可多次调用， subscribeOn() 只能调用一次。
 - rxjava 与retrofit结合，添加addCallAdapterFactory(RxJavaCallAdapterFactory.create())方法
 
+## 解决context内存泄露一个方法
+- 在对于传入的参数context，使用context.getApplicationContext()。确保不关系context来源
+
 [我的主页](https://github.com/z3jjlzt)
